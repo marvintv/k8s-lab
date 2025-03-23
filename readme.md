@@ -1,4 +1,12 @@
+---
+id: readme
+aliases: []
+tags: []
+---
+
 # Kubernetes Homelab - Experimental
+
+![](https://miro.medium.com/v2/resize:fit:730/1*WCsqMt85nMP0DvYv0JnkOA.png)
 
 This repository contains experimental Kubernetes configurations for my personal homelab setup. The project is currently in early stages of development.
 
