@@ -18,6 +18,30 @@ spec:
       containers:
       - image: ghcr.io/mealie-recipes/mealie:v2.8.0
         name: mealie
+        env:
+          - name: PUID
+            value: "1000"
+          - name: PGID
+            value: "1000"
+          - name: TZ
+            value: "Etc/UTC"
+          - name: BASE_URL
+            value: "http://mealie.local"
+          - name: ALLOW_SIGNUP
+            value: "true"
         ports:
           - containerPort: 9000
+        volumeMounts:
+          - mountPath: /app/data
+            name: mealie-data
+      volumes:
+        - name: mealie-data
+          persistentVolumeClaim:
+            claimName: mealie-data
+
+  # volumes:
+  #   - name:  mealie-data
+  #     # https://kubernetes.io/docs/concepts/configuration/configmap/a
+  #     persistentVolumeClaim:
+
 
